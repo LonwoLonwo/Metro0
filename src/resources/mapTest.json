@@ -1,0 +1,24 @@
+{
+    "connections": [
+        [
+            {
+                "line": 1,
+                "station": "Четвёртая"
+            },
+            {
+                "line": 2,
+                "station": "Dritte"
+            }
+        ],
+        [
+            {
+                "line": 2,
+                "station": "Funftes"
+            },
+            {
+                "line": 3,
+                "station": "Sextus"
+            }
+        ]
+    ],
+}
