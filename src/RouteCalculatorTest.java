@@ -96,12 +96,22 @@ public class RouteCalculatorTest extends TestCase
         route3.add(sixLineThree);
         route3.add(sevenLineThree);
 
-        JSONParser parser = new JSONParser();
+        /*JSONParser parser = new JSONParser();
         //мой путь
         String dataFile = "src\\resources\\mapTest.json";
         JSONObject jsonData = (JSONObject) parser.parse(Main.getJsonFile(dataFile));
         JSONArray connectionsArray = (JSONArray) jsonData.get("connections");
-        Main.parseConnections(connectionsArray, stationIndex);
+        Main.parseConnections(connectionsArray, stationIndex);*/
+
+        List<Station> connection1 = new ArrayList<>();
+        connection1.add(fourLineOne);
+        connection1.add(threeLineTwo);
+        stationIndex.addConnection(connection1);
+        List<Station> connection2 = new ArrayList<>();
+        connection2.add(fiveLineTwo);
+        connection2.add(sixLineThree);
+        stationIndex.addConnection(connection2);
+
     }
 
     public void testCalculateDurationOneLine(){

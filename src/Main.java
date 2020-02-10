@@ -85,7 +85,7 @@ public class Main
         try
         {
             JSONParser parser = new JSONParser();
-            JSONObject jsonData = (JSONObject) parser.parse(getJsonFile(dataFile));//!delete dataFile
+            JSONObject jsonData = (JSONObject) parser.parse(getJsonFile());
 
             JSONArray linesArray = (JSONArray) jsonData.get("lines");
             parseLines(linesArray);
@@ -94,14 +94,14 @@ public class Main
             parseStations(stationsObject);
 
             JSONArray connectionsArray = (JSONArray) jsonData.get("connections");
-            parseConnections(connectionsArray, stationIndex);//delete stationIndex
+            parseConnections(connectionsArray);
         }
         catch(Exception ex) {
             ex.printStackTrace();
         }
     }
 
-    public static void parseConnections(JSONArray connectionsArray, StationIndex stationIndex)//private! delete stationIndex
+    private static void parseConnections(JSONArray connectionsArray)
     {
         connectionsArray.forEach(connectionObject ->
         {
@@ -153,7 +153,7 @@ public class Main
         });
     }
 
-    public static String getJsonFile(String dataFile)//private! delete String dataFile
+    private static String getJsonFile()
     {
         StringBuilder builder = new StringBuilder();
         try {
